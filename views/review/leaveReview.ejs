@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate')%>
+
+    <!-- <h1>
+        <h1 class="text-white text-center">Review</h1>
+    </h1>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-4">
+            <form action="/leaveReview" method="post">
+
+                <div class="mb-3">
+                    <input class="form-control" type="text" id="favoriteDish" name="favoriteDish"
+                        placeholder="Favorite dish?">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" id="reviewDescription" name="reviewDescription"
+                        placeholder="Describe your experience!">
+                </div>
+                <input id="reviewRating" type="text" name="reviewRating" class="rating" data-size="lg" data-min="0"
+                    data-max="5" data-step="1">
+                <div class="mb-4">
+                    <button class="btn btn-success btn-block">Submit</button>
+                </div>
+                
+            </form>
+        </div>
+    </div> -->
+    <form action="/leaveReview" class="text-white text-center form-entry" method="post">
+        <h1 class="mb-3">Review</h1>
+        <div class="mb-3">
+            <input class="form-control" type="text" id="favoriteDish" name="favoriteDish" placeholder="Favourite dish?"
+                required>
+        </div>
+        <div class="mb-3">
+            <!-- <input class="form-control" type="text" id="reviewDescription" name="reviewDescription"
+                placeholder="Describe your experience!" required> -->
+                <textarea class="form-control" id="reviewDescription" name="reviewDescription" placeholder="Describe your experience!" required></textarea>
+        </div>
+        <input id="reviewRating" type="text" name="reviewRating" class="rating" data-size="lg" data-min="0" data-max="5"
+            data-step="1">
+        <div class="">
+            <button class="btn btn-success btn-block fs-5 fw-bold">Submit</button>
+        </div>
+        <!-- <i class="exclamation-circle bg-success" role="img"></i> -->
+    </form>

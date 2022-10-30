@@ -1,0 +1,38 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light shadow-5-strong bg-black fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white " href="/">
+            <img src="/images/logo.png" width="150" height="50" class="align-top" alt="">
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation ">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <% if(!session.loggedin) {%>
+                    <a class="nav-link text-white h4" href="/reservationForm">Make Reservation</a>
+                    <a class="nav-link text-white h4" href="/leaveReview">Leave review</a>
+                    <% } else {%>
+                        <% if(session.loggedin && session.isAdmin) {%>
+                            <a class="nav-link text-white" href="/reservation">View Reversation</a>
+                            <a class="nav-link text-white" href="/review">View Review</a>
+                            <a class="nav-link text-white" href="/reservation/report">View Reports</a>
+                            <a class="nav-link text-white" href="/manageUsers">Manage users</a>
+                            <%} else {%>
+                                <a class="nav-link text-white" href="/reservation">View Reversation</a>
+                                <%}%>
+
+                                    <% } %>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <% if(!session.loggedin) {%>
+                    <a class="nav-link text-white h3 rounded mx-2  btn-outline-warning" href="/login">Login</a>
+                    <a class="nav-link text-white h3 rounded mx-2 btn-outline-warning" href="/register">Register</a>
+
+                    <% } else {%>
+                        <a class="nav-link text-white h3 rounded mx-2 btn-outline-warning" href="/logout">Logout</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

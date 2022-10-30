@@ -1,0 +1,103 @@
+<% layout('layouts/boilerplate')%>
+    <!-- <h1 class="text-center text-white">Reservation</h1> -->
+    <div class="row h-100 justify-content-center align-items-center">
+
+        <div class="col-10 col-md-8 col-lg-4 reservation-form">
+            <h1 class="text-center text-white">Reservation</h1>
+            <form action="/makeReservation" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                    <input type="text" id="validationCustom01" name="firstname" class="form-control"
+                        placeholder="First Name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control"
+                        placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <small class="text-white">Format: 123-456-7890</small>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+
+                    <input type="email" name="email" class="form-control" aria-describedby="inputGroupPrepend"
+                        placeholder="Email" required>
+                    <span class="text-white">Make sure to provide valid email.</span>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-auto mb-3">
+                        <select id="reservationType" name="reservationType" class="form-select" required>
+                            <option value="" disabled selected hidden>Type</option>
+                            <option value="1">Dining</option>
+                            <option value="2">Private Dining</option>
+                            <option value="3">Catering</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select Reservation Type.
+                        </div>
+                    </div>
+                    <div class="col-md-auto mb-3">
+                        <select id="room" name="room" class="form-select">
+                            <option value="" disabled selected hidden>Room for Private/Cater</option>
+                            <option value="1">Council Room</option>
+                            <option value="2">State Room</option>
+                            <option value="3">Crown Room</option>
+                            <option value="4">Prime Room</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select Room for Private/Cater.
+                        </div>
+                    </div>
+                    <div class="col-md-auto mb-3">
+                        <select id="occasion" name="occasion" class="form-select">
+                            <option value="" disabled selected hidden>Occasion(optional)</option>
+                            <option value="1">Birthday</option>
+                            <option value="2">Anniversary</option>
+                            <option value="3">Date Night</option>
+                            <option value="4">Business Meal</option>
+                            <option value="5">Celebration</option>
+                            <option value="6">Other</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Look good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="number" id="number" class="form-control" name="number" placeholder="Number of People"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="date" id="reservationDate" class="form-control" name="date" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="time" id="time" class="form-control" name="time" min="11:00" max="23:00" required>
+                    <small class="text-white">Hours: 11AM - 11PM</small>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-success btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>

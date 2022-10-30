@@ -1,0 +1,63 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row justify-content-center my-5">
+        <h1 class="text-center text-white">REVIEWS</h1>
+        <div class="col-auto">
+            <div class="row">
+                <div class="col-3 w-100">
+                    <input class="form-control" type="text" name="" id="reviewInput" placeholder="Search review by rating"
+                        onkeyup="searchReview()">
+                </div>
+            </div>
+            <!-- <table class="table table-striped table-hover table-bordered my-4">
+                <thead>
+                    <tr class>
+                        <th class="text-center bg-warning text-white h6">Favourite Dish</th>
+                        <th class="text-center bg-warning text-white h6">Review Rating</th>
+                        <th class="text-center bg-warning text-white h6">Review Description</th>
+                        <th class="text-center bg-warning text-white h6">Review Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let result of results) { %>
+                        <tr>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.favoriteDish %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.reviewRating %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.reviewDescription %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.Date %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table> -->
+            <!-- <div class="row">
+                <div class="col-4"> -->
+            <% for (let result of results) { %>
+                <div class="card my-3" style="max-width: 50rem;">
+                    <div class="card-header bg-warning fw-bold">
+                        <%= result.Date %>
+                    </div>
+                    <div class="card-body bg-secondary bg-opacity-10">
+
+                        <input id="reviewRating" type="text" name="reviewRating" class="rating" data-size="lg"
+                            data-min="0" data-max="5" data-step="1" value="<%= result.reviewRating %>" disabled>
+
+                        <h5 class="card-title"><span class="fw-bold">Favourite Dish: </span>
+                            <%= result.favoriteDish %>
+                        </h5>
+                        <p class="card-text">
+                            <small class="text-muted"><%= result.reviewDescription %></small>
+                        </p>
+                    </div>
+                </div>
+                <% } %>
+                    <!-- </div>
+            </div> -->
+        </div>
+    </div>

@@ -1,0 +1,221 @@
+@font-face {
+    font-family: DroidSerif_0;
+    src: url('../fonts/DroidSerif_0.ttf');
+}
+
+* {
+    font-size: 100%;
+    font-family: DroidSerif_0;
+}
+
+body {
+    background: url('../images/banner.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* change navbar background */
+nav.navbar {
+    background: transparent;
+}
+
+/* change navbar-brand color */
+.navbar a.navbar-brand {
+    color: white;
+}
+
+/* change navbar-brand color on hover */
+.navbar a.navbar-brand:hover {
+    color: green;
+}
+
+/*  change navbar li colors, also active one but not disabled one */
+.navbar ul.navbar-nav li.nav-item a.nav-link {
+    color: white;
+}
+
+/* change navbar-toggler inside lines color (stroke) */
+.navbar-light span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    color: white;
+}
+
+/* change hamburger button border color */
+.navbar-light button.navbar-toggler {
+    border-color: white;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #fca311;
+    color: #fff;
+}
+
+.icon-yellow {
+    color: yellow;
+}
+
+.icon-green {
+    color: green;
+}
+
+.icon-red {
+    color: red;
+}
+
+.table {
+    width: auto;
+}
+
+a.activate {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    background-color: #4e9af1;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+a.deactivate {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    background-color: #f1bb4e;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+a.delete {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    background-color: #f14e4e;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+a.activate:hover,
+a.deactivate:hover,
+a.delete:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+@media all and (max-width: 30em) {
+    a.activate,
+    a.deactivate,
+    a.delete {
+        display: block;
+        margin: 0.2em auto;
+    }
+}
+
+.form-entry {
+    background: rgba(236, 240, 241, 0.35);
+    border-radius: 10px;
+    max-width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 100%;
+}
+
+.reservation-form {
+    background: rgba(236, 240, 241, 0.35);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+}
+
+.event-1 {
+    background: url('/images/Group-17.png');
+    height: 580px;
+    background-size: cover;
+}
+.event-2 {
+    background: url('/images/Group624.png');
+    height: 580px;
+    background-size: cover;
+}
+
+.gallery {
+    background: url('/images/gallery-1.png');
+    height: 740px;
+
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+}
+
+.adress-code {
+    width: 100%;
+    background: #140700;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.indo {
+    color: #cb9700;
+}
+
+.location {
+    padding-top: 60px;
+}
+
+.map .fa {
+    font-size: 40px;
+}
+
+.link_set {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link_set:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#filter {
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* https://www.w3schools.com/howto/howto_css_fixed_menu.asp */

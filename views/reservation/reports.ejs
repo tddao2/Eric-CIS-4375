@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate')%>
+    <div class="container text-center my-5">
+        <h1 class="text-center text-white">REPORTS</h1>
+        <div class="row g-3">
+            <div class="col-auto">
+                <label class="form-control-plaintext font-weight-bold text-white" for="filter">Date Picker</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" name="filter" id="filter">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-success" onclick="filter()">Search</button>
+            </div>
+        </div>
+
+        <div class="row py-4">
+            <div class="col-md-6">
+                <div class="col-md-12 border rounded chart4-container">
+                    <canvas id="reviewChart" width="400" height="400"></canvas>
+                </div>
+
+                <div class="col-md-12 border rounded chart2-container">
+                    <canvas id="lineChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12 border rounded chart3-container">
+                    <canvas id="pieChart" width="400" height="400"></canvas>
+                </div>
+                <div class="col-md-12 border rounded chart1-container">
+                    <canvas id="barChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate')%>
+    <!-- <h1 class="text-white text-center">Register</h1>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-5">
+            <form action="/register" method="POST" class="validated-form" novalidate>
+                <div class="text-white mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="text-white mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" id="email" name="email" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="text-white mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-success mt-4">Register</button>
+            </form>
+        </div>
+    </div> -->
+    <form action="/register" method="POST" class="validated-form text-white text-center form-entry" novalidate>
+        <h1 class="mb-3">Register</h1>
+        <div class="text-white mb-3">
+            
+            <input class="form-control" type="text" id="username" name="username" placeholder="Enter username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="text-white mb-3">
+            <input class="form-control" type="email" id="email" name="email" placeholder="Enter email" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="text-white mb-3">
+            <input class="form-control" type="password" id="password" name="password" placeholder="Enter password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <button class="btn btn-success btn-block border-0 mt-4 fs-5 fw-bold">Register</button>
+    </form>

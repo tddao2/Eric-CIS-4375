@@ -1,0 +1,104 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row justify-content-center my-5">
+        <h1 class="text-center text-white">RESERVATIONS</h1>
+        <div class="col-auto">
+            <div class="row">
+                <div class="col-3">
+                    <input class="form-control" type="text" name="" id="myInput" placeholder="Search reservation"
+                        onkeyup="search()">
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered my-4">
+                <thead>
+                    <tr class>
+                        <th class="text-center bg-warning text-white h6">Name</th>
+                        <th class="text-center bg-warning text-white h6">Phone Number</th>
+                        <th class="text-center bg-warning text-white h6">Email</th>
+                        <th class="text-center bg-warning text-white h6">Type</th>
+                        <th class="text-center bg-warning text-white h6">Room</th>
+                        <th class="text-center bg-warning text-white h6">Occasion</th>
+                        <th class="text-center bg-warning text-white h6">People</th>
+                        <th class="text-center bg-warning text-white h6">Date</th>
+                        <th class="text-center bg-warning text-white h6">Time</th>
+                        <th class="text-center bg-warning text-white h6">Status</th>
+                        <th class="text-center bg-warning text-white h6">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let result of results) { %>
+                        <tr>
+
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.name %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.phoneNumber %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.email %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.reservationTypeName %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.roomName %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.occasionName %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.persons %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.Date %>
+                            </td>
+                            <td class="text-center bg-dark text-white h6">
+                                <%= result.Time %>
+                            </td>
+                            <td class="text-center bg-dark text-white">
+                                <% if (result.status==1) {%>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-check-circle icon-green" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                    </svg>
+                                    <% } else if (result.status==2) {%>
+
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            fill="currentColor" class="bi bi-x-circle icon-red" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                        <% } else {%>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                fill="currentColor" class="bi bi-exclamation-circle icon-yellow"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path
+                                                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                                            </svg>
+                                            <% }%>
+                            </td>
+                            <td>
+                                <a href="/reservation/accept/<%= result.reservationID %>/<%= result.email %>"
+                                    class="activate">Accept </a>
+
+                                <a href="/reservation/reject/<%= result.reservationID %>/<%= result.email %>"
+                                    class="deactivate" onclick="return confirm('Do you want to delete?')">Reject
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- https://icons.getbootstrap.com/icons/exclamation-circle/ -->
